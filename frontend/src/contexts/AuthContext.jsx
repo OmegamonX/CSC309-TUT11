@@ -84,7 +84,7 @@ export const AuthProvider = ({ children }) => {
             }
             else {
                 const errorData = await res.json();
-                return errorData.message || "Login failed";
+                return errorData.message;
             }
         } catch (err) {
             console.error(err);
@@ -112,6 +112,9 @@ export const AuthProvider = ({ children }) => {
             
             if (res.ok) {
                 navigate("/success");
+            } else {
+                const errorData = await res.json();
+                return errorData.message;
             }
             
         } catch (err) {
