@@ -9,7 +9,9 @@ const app = express();
 
 
 // TODO: complete me (CORS)
-app.use(cors());
+app.use(cors({
+    origin: FRONTEND_URL
+}));
 app.options("*", cors());
 app.use(express.json());
 app.use("", routes);
