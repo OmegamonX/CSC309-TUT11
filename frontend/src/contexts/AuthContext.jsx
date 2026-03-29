@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 const AuthContext = createContext(null);
 
 // TODO: get the BACKEND_URL.
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL; //|| "http://localhost:3000";
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 /*
  * This provider should export a `user` context state that is 
@@ -88,11 +88,9 @@ export const AuthProvider = ({ children }) => {
                 navigate("/profile");
             }
             else {
-                const errorData = await res.json();
-                return errorData.message || "Login failed";
+                return "Login failed";
             }
         } catch (err) {
-            console.error(err);
             return "An error occurred during login";
         }
     };

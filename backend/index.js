@@ -3,7 +3,7 @@ import routes from "./routes.js";
 // TODO: complete me (loading the necessary packages)
 import cors from "cors";
 
-const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173";
+const FRONTEND_URL = process.env.FRONTEND_URL;
 
 const app = express();
 
