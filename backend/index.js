@@ -3,7 +3,7 @@ import routes from "./routes.js";
 // TODO: complete me (loading the necessary packages)
 import cors from "cors";
 
-const FRONTEND_URL = process.env.FRONTEND_URL;
+const FRONTEND_URL = process.env.FRONTEND_URL || "https://frontend-production-98e73.up.railway.app";
 
 const app = express();
 
