@@ -88,9 +88,11 @@ export const AuthProvider = ({ children }) => {
                 navigate("/profile");
             }
             else {
-                return "Login failed";
+                const errorData = await res.json();
+                return errorData.message || "Login failed";
             }
         } catch (err) {
+            console.error(err);
             return "An error occurred during login";
         }
     };
