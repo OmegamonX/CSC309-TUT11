@@ -4,7 +4,6 @@ const AuthContext = createContext(null);
 
 // TODO: get the BACKEND_URL.
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
-console.log("BACKEND_URL:", import.meta.env.VITE_BACKEND_URL);
 
 /*
  * This provider should export a `user` context state that is 
@@ -106,6 +105,8 @@ export const AuthProvider = ({ children }) => {
     const register = async (userData) => {
         // TODO: complete me
         try {
+            console.log("BACKEND_URL:", import.meta.env.VITE_BACKEND_URL);
+
             const res = await fetch(`${BACKEND_URL}/register`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
